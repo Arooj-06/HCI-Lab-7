@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Morgan · HCI Student & Aspiring Product Designer</title>
+  <meta name="description" content="Portfolio of Alex Morgan, an HCI student exploring thoughtful design and human-centered digital experiences.">
+
+  <!-- Google Fonts: Inter & IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'monospace'],
+          },
+          colors: {
+            brand: '#254ee8',
+            sandBg: '#f6f4ee',
+            darkSurface: '#22251f',
+            mutedText: '#62665d',
+            divider: '#d8d9cf',
+            cardGreen: '#dde4d5',
+            cardPurple: '#e7e2ef',
+            cardPeach: '#ead8c8',
+            cardBlue: '#e8edff',
+            appWhite: '#fffefa',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body id="top" class="bg-sandBg text-darkSurface font-sans antialiased min-h-screen flex flex-col">
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="border-b border-divider bg-sandBg w-full flex flex-col shrink-0">
+    <div class="w-full max-w-[1440px] mx-auto h-[80px] md:h-[96px] px-6 sm:px-10 lg:px-20 flex items-center justify-between">
+      
+      <!-- Identity -->
+      <a href="#top" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand rounded-full pr-2">
+        <div class="bg-brand rounded-full w-[38px] h-[38px] flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+          <span class="text-white font-semibold text-[14px]">am.</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-[18px] font-semibold text-darkSurface tracking-tight">Alex Morgan</span>
+          <span class="font-mono text-[11px] text-mutedText hidden sm:inline">/ ILLUSTRATIVE PORTFOLIO</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-9">
+        <a href="#work" class="text-[14px] font-medium text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-2 transition-colors">Work</a>
+        <a href="#about" class="text-[14px] font-medium text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-2 transition-colors">About</a>
+        <a href="#process" class="text-[14px] font-medium text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-2 transition-colors">Process</a>
+        <a href="#contact" class="flex items-center gap-2 text-[14px] font-semibold text-brand hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-2 transition-colors group">
+          <span>Let’s talk</span>
+          <img src="./assets/6cd6d.svg" alt="Arrow pointing up right" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+        </a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        id="menu-toggle"
+        type="button" 
+        class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg border border-divider hover:bg-[#eae8e0] focus:outline-none focus:ring-2 focus:ring-brand transition-colors p-2"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span class="w-5 h-0.5 bg-darkSurface my-0.5 transition-all"></span>
+        <span class="w-5 h-0.5 bg-darkSurface my-0.5 transition-all"></span>
+        <span class="w-5 h-0.5 bg-darkSurface my-0.5 transition-all"></span>
+      </button>
+
+    </div>
+
+    <!-- Mobile Navigation Menu (flex flow, no absolute positioning) -->
+    <nav id="mobile-menu" aria-label="Mobile Navigation" class="hidden md:hidden border-t border-divider px-6 py-4 flex-col gap-3 bg-sandBg">
+      <a href="#work" class="text-[15px] font-medium text-darkSurface hover:text-brand py-2 px-3 rounded hover:bg-[#eae8e0] focus:outline-none focus:ring-2 focus:ring-brand transition-colors">Work</a>
+      <a href="#about" class="text-[15px] font-medium text-darkSurface hover:text-brand py-2 px-3 rounded hover:bg-[#eae8e0] focus:outline-none focus:ring-2 focus:ring-brand transition-colors">About</a>
+      <a href="#process" class="text-[15px] font-medium text-darkSurface hover:text-brand py-2 px-3 rounded hover:bg-[#eae8e0] focus:outline-none focus:ring-2 focus:ring-brand transition-colors">Process</a>
+      <a href="#contact" class="flex items-center justify-between text-[15px] font-semibold text-brand py-2 px-3 rounded hover:bg-[#eae8e0] focus:outline-none focus:ring-2 focus:ring-brand transition-colors">
+        <span>Let’s talk</span>
+        <img src="./assets/6cd6d.svg" alt="Arrow pointing up right" class="w-4 h-4">
+      </a>
+    </nav>
+  </header>
+
+  <!-- ==================== MAIN CONTENT ==================== -->
+  <main class="flex-1 w-full flex flex-col">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 pt-12 sm:pt-16 pb-16 sm:pb-20 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+      
+      <!-- Introduction Column -->
+      <div class="flex-1 flex flex-col items-start gap-7 w-full">
+        
+        <!-- Availability indicator -->
+        <div class="flex items-center gap-2">
+          <img src="./assets/449e2.svg" alt="Active status dot" class="w-[7px] h-[7px]">
+          <span class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">HCI student · Aspiring product designer</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-darkSurface font-medium text-[52px] sm:text-[72px] xl:text-[92px] leading-[0.98] tracking-[-2.5px] sm:tracking-[-4px] xl:tracking-[-5.5px]">
+          Curious mind.<br>
+          Thoughtful<br>
+          design.
+        </h1>
+
+        <!-- Bio blurb -->
+        <p class="text-[17px] sm:text-[19px] text-mutedText font-normal leading-[1.6] max-w-[560px]">
+          Hi, I’m Alex. I explore how small, considered design decisions can make everyday experiences feel a little more human.
+        </p>
+
+        <!-- CTA row -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 pt-2 w-full">
+          <a href="#work" class="inline-flex items-center justify-center gap-6 h-[56px] px-6 bg-brand text-white font-semibold text-[16px] rounded-[8px] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98]">
+            <span>Explore my work</span>
+            <img src="./assets/46c7b.svg" alt="Arrow pointing down" class="w-5 h-5">
+          </a>
+          <span class="text-[14px] text-mutedText">A work in progress. Just like me.</span>
+        </div>
+
+      </div>
+
+      <!-- Featured Project Preview Card (Pure flex & grid, zero absolute) -->
+      <div class="w-full lg:w-[456px] h-[544px] bg-cardPurple rounded-[16px] p-6 flex flex-col justify-between overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+        
+        <!-- Card Top Label -->
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-[11px] text-darkSurface font-medium tracking-wide">A CAMPUS WITH MORE CONNECTION.</span>
+        </div>
+
+        <!-- Phone Mockup Container (Flex center with slight tilt) -->
+        <div class="flex items-center justify-center my-auto py-2 overflow-hidden">
+          <div class="w-[272px] h-[410px] bg-appWhite border-[5px] border-darkSurface rounded-[28px] p-4 flex flex-col justify-between shadow-2xl -rotate-6 hover:rotate-0 transition-transform duration-300">
+            
+            <!-- App status bar -->
+            <div class="flex items-center justify-between">
+              <span class="text-[9px] font-semibold text-black">9:41</span>
+              <div class="bg-darkSurface h-[10px] w-[56px] rounded-full"></div>
+              <img src="./assets/019b6.svg" alt="Battery full icon" class="w-[15px] h-[15px]">
+            </div>
+
+            <!-- App identity -->
+            <div class="flex items-center justify-between pt-1">
+              <span class="text-[18px] font-bold text-brand tracking-tight">campus / together</span>
+              <img src="./assets/59113.svg" alt="Notification bell icon" class="w-[15px] h-[15px]">
+            </div>
+
+            <!-- Welcome text -->
+            <div class="flex flex-col gap-0.5">
+              <span class="text-[9px] text-mutedText uppercase font-medium">Monday, October 12</span>
+              <p class="text-[22px] font-semibold text-black tracking-tight leading-[1.05]">
+                Your people.<br>Your place.
+              </p>
+            </div>
+
+            <!-- Search Field -->
+            <div class="bg-sandBg rounded-[8px] p-2 flex items-center gap-2">
+              <label for="campus-search" class="sr-only">Search campus activities</label>
+              <img src="./assets/eb240.svg" alt="Search icon" class="w-3 h-3 shrink-0">
+              <input id="campus-search" type="text" placeholder="Find something you’ll love" class="bg-transparent text-[10px] text-mutedText placeholder-mutedText w-full focus:outline-none">
+            </div>
+
+            <!-- Event Card inside app -->
+            <div class="bg-cardGreen rounded-[12px] p-3 flex flex-col gap-2">
+              <div class="flex items-center gap-2 text-[8px] font-semibold">
+                <span class="text-black uppercase">Creative Club</span>
+                <span class="text-mutedText">Today · 4 PM</span>
+              </div>
+              <p class="text-[18px] font-semibold text-black tracking-tight leading-[1.05]">
+                Make things.<br>Meet people.
+              </p>
+              <div class="flex items-center justify-between pt-1">
+                <span class="text-[9px] text-black">Design studio, Block B</span>
+                <img src="./assets/c9f4a.svg" alt="Arrow icon" class="w-3.5 h-3.5">
+              </div>
+            </div>
+
+            <!-- Tab bar -->
+            <div class="flex items-center justify-between pt-2 border-t border-gray-100">
+              <img src="./assets/88b38.svg" alt="Home navigation icon" class="w-[16px] h-[16px] hover:opacity-75 transition-opacity">
+              <img src="./assets/b214e.svg" alt="Compass explore icon" class="w-[16px] h-[16px] hover:opacity-75 transition-opacity">
+              <img src="./assets/50ff1.svg" alt="Saved bookmarks icon" class="w-[16px] h-[16px] hover:opacity-75 transition-opacity">
+              <img src="./assets/b6baf.svg" alt="User profile icon" class="w-[16px] h-[16px] hover:opacity-75 transition-opacity">
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Card Bottom Note -->
+        <a href="#work" class="flex items-center justify-between text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded p-1 transition-colors">
+          <span class="font-mono text-[10px] font-medium tracking-wide">CAMPUS TOGETHER / UX CASE STUDY</span>
+          <img src="./assets/b3ff4.svg" alt="Arrow pointing to case study" class="w-5 h-5">
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- DESIGN FOCUS STRIP -->
+    <section id="focus" class="border-t border-b border-divider w-full bg-sandBg">
+      <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 py-[30px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        
+        <p class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">
+          Learning by making
+        </p>
+
+        <div class="flex flex-wrap items-center gap-8 md:gap-10">
+          <div class="flex items-center gap-3">
+            <img src="./assets/8ae45.svg" alt="Asterisk icon" class="w-[18px] h-[18px]">
+            <span class="text-[16px] text-darkSurface font-normal">Human-centered design</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="./assets/8ae45.svg" alt="Asterisk icon" class="w-[18px] h-[18px]">
+            <span class="text-[16px] text-darkSurface font-normal">Digital experiences</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <img src="./assets/8ae45.svg" alt="Asterisk icon" class="w-[18px] h-[18px]">
+            <span class="text-[16px] text-darkSurface font-normal">Everyday impact</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SELECTED WORK SECTION -->
+    <section id="work" class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 py-16 sm:py-24 flex flex-col gap-12">
+      
+      <!-- Section Heading -->
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+        <div class="flex flex-col gap-4">
+          <p class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">01 / Selected work</p>
+          <h2 class="text-[36px] sm:text-[44px] lg:text-[52px] font-medium tracking-tight text-darkSurface leading-[1.08]">
+            Ideas made tangible.
+          </h2>
+        </div>
+        <p class="text-[16px] text-mutedText max-w-[360px] leading-[1.6]">
+          A few explorations across research, interfaces and visual storytelling. All illustrative student projects.
+        </p>
+      </div>
+
+      <!-- Projects Grid (Cards stack on mobile, 2 columns on desktop) -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 w-full">
+
+        <!-- Project 01: Campus Together -->
+        <article class="flex flex-col gap-5 group">
+          <!-- Media Showcase (Pure flex, zero absolute) -->
+          <div class="bg-cardGreen rounded-[16px] h-[360px] overflow-hidden flex items-end justify-center px-6 sm:px-10 pt-8 transition-transform duration-300 group-hover:scale-[1.01]">
+            <div class="bg-appWhite rounded-t-[10px] w-full h-[322px] p-5 flex flex-col gap-4 shadow-sm">
+              
+              <!-- Website nav preview -->
+              <div class="flex items-center justify-between">
+                <span class="text-[14px] font-bold text-brand tracking-tight">campus / together</span>
+                <span class="text-[9px] text-mutedText tracking-wider hidden sm:inline">Discover &nbsp; Clubs &nbsp; My campus</span>
+                <img src="./assets/7fc59.svg" alt="User avatar icon" class="w-5 h-5">
+              </div>
+
+              <!-- Website hero preview -->
+              <div class="flex flex-col sm:flex-row items-center gap-4 flex-1">
+                <div class="flex-1 flex flex-col gap-2">
+                  <span class="font-mono text-[8px] text-mutedText uppercase">Belonging starts here.</span>
+                  <p class="text-[20px] sm:text-[24px] font-semibold text-darkSurface tracking-tight leading-[1.05]">
+                    Find your<br>kind of people.
+                  </p>
+                  <p class="text-[9px] text-mutedText leading-relaxed">
+                    Discover student clubs, shared interests and your next favorite campus moment.
+                  </p>
+                  <div class="pt-1">
+                    <span class="inline-block bg-brand text-white text-[9px] px-3 py-1.5 rounded-[4px]">Find your community ↗</span>
+                  </div>
+                </div>
+                <div class="w-[160px] sm:w-[190px] h-[150px] sm:h-[180px] rounded-[30px] sm:rounded-[50px] overflow-hidden shrink-0">
+                  <img src="./assets/4e81a.png" alt="University students collaborating together at a wooden table" class="w-full h-full object-cover">
+                </div>
+              </div>
+
+              <!-- Category pills -->
+              <div class="grid grid-cols-3 gap-2">
+                <div class="bg-sandBg text-center py-1.5 px-1 rounded-[4px] text-[8px] text-darkSurface font-medium">Create something</div>
+                <div class="bg-sandBg text-center py-1.5 px-1 rounded-[4px] text-[8px] text-darkSurface font-medium">Get outdoors</div>
+                <div class="bg-sandBg text-center py-1.5 px-1 rounded-[4px] text-[8px] text-darkSurface font-medium">Learn together</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Project Information -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-[12px] text-mutedText">01</span>
+              <h3 class="flex-1 text-[26px] sm:text-[28px] font-medium tracking-tight text-darkSurface group-hover:text-brand transition-colors">
+                Campus Together
+              </h3>
+              <a href="#work" class="w-10 h-10 rounded-full border border-divider flex items-center justify-center group-hover:border-brand group-hover:bg-brand group-hover:text-white focus:outline-none focus:ring-2 focus:ring-brand transition-all" aria-label="View Campus Together case study">
+                <img src="./assets/970a3.svg" alt="Arrow pointing to case study" class="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all">
+              </a>
+            </div>
+            <p class="text-[16px] text-mutedText leading-[1.5]">
+              Helping new students find their people, not just their next event.
+            </p>
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex items-center gap-2">
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">UX research</span>
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Product design</span>
+              </div>
+              <span class="font-mono text-[12px] text-mutedText">2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 02: Refill -->
+        <article class="flex flex-col gap-5 group">
+          <!-- Media Showcase (Pure flex, zero absolute) -->
+          <div class="bg-brand rounded-[16px] h-[360px] overflow-hidden flex items-center justify-center gap-4 sm:gap-6 p-4 sm:p-6 transition-transform duration-300 group-hover:scale-[1.01]">
+            
+            <!-- Phone 1 (Tilted left) -->
+            <div class="w-[145px] sm:w-[170px] h-[290px] sm:h-[310px] bg-appWhite border-[4px] border-darkSurface rounded-[24px] p-3 sm:p-4 flex flex-col justify-between shadow-xl -rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div class="flex items-center justify-between">
+                <span class="text-[15px] font-bold text-brand tracking-tight">refill.</span>
+                <img src="./assets/58644.svg" alt="Water droplet icon" class="w-4 h-4">
+              </div>
+              <p class="text-[18px] sm:text-[21px] font-semibold text-black tracking-tight leading-[1.05]">
+                Less waste.<br>More good.
+              </p>
+              <div class="bg-cardGreen rounded-[10px] p-2 sm:p-3 flex flex-col items-center justify-center gap-1">
+                <img src="./assets/8ec86.svg" alt="Green sprout plant icon" class="w-7 h-7 sm:w-9 sm:h-9">
+                <span class="text-[9px] font-semibold text-[#354b3e] text-center">A fresh start, every day.</span>
+              </div>
+              <button type="button" class="bg-brand text-white text-[9px] font-medium py-2 px-3 rounded-[8px] w-full hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-black transition-colors">
+                Log a refill
+              </button>
+              <div class="flex items-center justify-between pt-1 border-t border-gray-100">
+                <img src="./assets/c182e.svg" alt="Home icon" class="w-3.5 h-3.5">
+                <img src="./assets/4f25c.svg" alt="Analytics bar chart icon" class="w-3.5 h-3.5">
+                <img src="./assets/e68eb.svg" alt="Profile user icon" class="w-3.5 h-3.5">
+              </div>
+            </div>
+
+            <!-- Phone 2 (Tilted right) -->
+            <div class="w-[145px] sm:w-[170px] h-[290px] sm:h-[310px] bg-appWhite border-[4px] border-darkSurface rounded-[24px] p-3 sm:p-4 flex flex-col justify-between shadow-xl rotate-6 hover:rotate-0 transition-transform duration-300">
+              <div class="flex items-center justify-between">
+                <span class="text-[15px] font-bold text-brand tracking-tight">refill.</span>
+                <img src="./assets/58644.svg" alt="Water droplet icon" class="w-4 h-4">
+              </div>
+              <p class="text-[18px] sm:text-[21px] font-semibold text-black tracking-tight leading-[1.05]">
+                Small steps.<br>Real change.
+              </p>
+              <div class="bg-cardBlue rounded-[10px] p-2 sm:p-3 flex flex-col items-center justify-center text-brand">
+                <span class="text-[34px] sm:text-[42px] font-semibold tracking-tighter leading-none">24</span>
+                <span class="text-[8px] font-medium text-center">single-use bottles saved</span>
+              </div>
+              <button type="button" class="bg-brand text-white text-[9px] font-medium py-2 px-3 rounded-[8px] w-full hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-black transition-colors">
+                See your impact
+              </button>
+              <div class="flex items-center justify-between pt-1 border-t border-gray-100">
+                <img src="./assets/c182e.svg" alt="Home icon" class="w-3.5 h-3.5">
+                <img src="./assets/4f25c.svg" alt="Analytics bar chart icon" class="w-3.5 h-3.5">
+                <img src="./assets/e68eb.svg" alt="Profile user icon" class="w-3.5 h-3.5">
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Project Information -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-[12px] text-mutedText">02</span>
+              <h3 class="flex-1 text-[26px] sm:text-[28px] font-medium tracking-tight text-darkSurface group-hover:text-brand transition-colors">
+                Refill
+              </h3>
+              <a href="#work" class="w-10 h-10 rounded-full border border-divider flex items-center justify-center group-hover:border-brand group-hover:bg-brand group-hover:text-white focus:outline-none focus:ring-2 focus:ring-brand transition-all" aria-label="View Refill case study">
+                <img src="./assets/970a3.svg" alt="Arrow pointing to case study" class="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all">
+              </a>
+            </div>
+            <p class="text-[16px] text-mutedText leading-[1.5]">
+              Making a sustainable daily habit feel simple, visible and rewarding.
+            </p>
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex items-center gap-2">
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Interaction design</span>
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Mobile app</span>
+              </div>
+              <span class="font-mono text-[12px] text-mutedText">2026</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 03: Field Notes -->
+        <article class="flex flex-col gap-5 group">
+          <!-- Media Showcase (Pure CSS Grid overlay, zero absolute) -->
+          <div class="grid grid-cols-1 grid-rows-1 rounded-[16px] h-[360px] overflow-hidden bg-cardPurple transition-transform duration-300 group-hover:scale-[1.01]">
+            <img src="./assets/4139b.png" alt="Field notes open botanical publication with pressed specimen photography" class="col-start-1 row-start-1 w-full h-full object-cover">
+            <div class="col-start-1 row-start-1 place-self-start m-5 bg-appWhite px-3 py-1.5 rounded-full shadow-sm">
+              <span class="font-mono text-[10px] text-darkSurface font-medium">FIELD NOTES / VOL. 01</span>
+            </div>
+          </div>
+
+          <!-- Project Information -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-[12px] text-mutedText">03</span>
+              <h3 class="flex-1 text-[26px] sm:text-[28px] font-medium tracking-tight text-darkSurface group-hover:text-brand transition-colors">
+                Field Notes
+              </h3>
+              <a href="#work" class="w-10 h-10 rounded-full border border-divider flex items-center justify-center group-hover:border-brand group-hover:bg-brand group-hover:text-white focus:outline-none focus:ring-2 focus:ring-brand transition-all" aria-label="View Field Notes case study">
+                <img src="./assets/970a3.svg" alt="Arrow pointing to case study" class="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all">
+              </a>
+            </div>
+            <p class="text-[16px] text-mutedText leading-[1.5]">
+              An editorial experiment in slowing down and looking a little closer.
+            </p>
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex items-center gap-2">
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Visual design</span>
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Editorial</span>
+              </div>
+              <span class="font-mono text-[12px] text-mutedText">2025</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 04: Wayfinder -->
+        <article class="flex flex-col gap-5 group">
+          <!-- Media Showcase (Pure flex & grid, zero absolute) -->
+          <div class="bg-cardPeach rounded-[16px] h-[360px] overflow-hidden p-6 sm:p-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-[1.01]">
+            <div class="bg-appWhite rounded-[10px] w-full h-[286px] flex flex-col sm:flex-row overflow-hidden shadow-sm">
+              
+              <!-- Directions panel -->
+              <div class="w-full sm:w-[190px] p-4 flex flex-col justify-between border-b sm:border-b-0 sm:border-r border-divider shrink-0">
+                <div class="flex flex-col gap-2">
+                  <span class="text-[14px] font-bold text-black tracking-tight">wayfinder↗</span>
+                  <p class="text-[20px] font-semibold text-black tracking-tight leading-[1.05]">
+                    A clearer way<br>to get there.
+                  </p>
+                </div>
+                
+                <div class="bg-sandBg p-2.5 rounded-[6px] flex flex-col gap-1.5 text-[9px] my-1">
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-mutedText">●</span>
+                    <span class="text-mutedText">Main entrance</span>
+                  </div>
+                  <div class="h-px bg-divider w-full"></div>
+                  <div class="flex items-center gap-1.5 font-medium">
+                    <span class="text-black">◎</span>
+                    <span class="text-black">Design building</span>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-1.5 text-[9px] text-brand">
+                  <img src="./assets/8c8ad.svg" alt="Accessibility wheelchair icon" class="w-3.5 h-3.5">
+                  <span>Step-free route · 6 min</span>
+                </div>
+
+                <button type="button" class="bg-brand text-white text-[9px] font-medium py-2 px-3 rounded-[6px] hover:bg-blue-700 focus:outline-none focus:ring-1 focus:ring-black transition-colors">
+                  Start exploring ↗
+                </button>
+              </div>
+
+              <!-- Campus Map graphic (Grid-based, zero absolute) -->
+              <div class="flex-1 bg-cardGreen p-4 flex flex-col justify-between overflow-hidden">
+                <div class="flex justify-between items-start">
+                  <div class="w-[78px] h-[55px] bg-appWhite border border-divider rounded-[4px] shadow-sm"></div>
+                  <div class="w-[98px] h-[70px] bg-appWhite border border-divider rounded-[4px] shadow-sm flex items-center justify-center">
+                    <div class="w-[32px] h-[32px] bg-brand rounded-full flex items-center justify-center">
+                      <img src="./assets/04f23.svg" alt="Destination marker flag icon" class="w-4 h-4">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Connecting route representation -->
+                <div class="flex items-center justify-center py-2">
+                  <div class="flex items-center gap-2 border-2 border-dashed border-brand px-3 py-1 rounded-full bg-white/60">
+                    <img src="./assets/70732.svg" alt="Route origin point" class="w-3.5 h-3.5">
+                    <span class="text-[9px] font-mono text-brand font-medium">STEP-FREE ROUTE</span>
+                  </div>
+                </div>
+
+                <div class="flex justify-between items-end">
+                  <div class="w-[74px] h-[60px] bg-appWhite border border-divider rounded-[4px] shadow-sm"></div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-[72px] h-[64px] bg-appWhite border border-divider rounded-[4px] shadow-sm"></div>
+                    <div class="bg-appWhite p-2 rounded-[6px] shadow-sm">
+                      <img src="./assets/31b87.svg" alt="Zoom in plus icon" class="w-3.5 h-3.5">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Project Information -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-4">
+              <span class="font-mono text-[12px] text-mutedText">04</span>
+              <h3 class="flex-1 text-[26px] sm:text-[28px] font-medium tracking-tight text-darkSurface group-hover:text-brand transition-colors">
+                Wayfinder
+              </h3>
+              <a href="#work" class="w-10 h-10 rounded-full border border-divider flex items-center justify-center group-hover:border-brand group-hover:bg-brand group-hover:text-white focus:outline-none focus:ring-2 focus:ring-brand transition-all" aria-label="View Wayfinder case study">
+                <img src="./assets/970a3.svg" alt="Arrow pointing to case study" class="w-5 h-5 group-hover:brightness-0 group-hover:invert transition-all">
+              </a>
+            </div>
+            <p class="text-[16px] text-mutedText leading-[1.5]">
+              Exploring a more accessible way to navigate the university campus.
+            </p>
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex items-center gap-2">
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Accessibility</span>
+                <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Prototyping</span>
+              </div>
+              <span class="font-mono text-[12px] text-mutedText">2025</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Section Footer Context Note -->
+      <div class="flex items-center gap-2.5 text-mutedText text-[13px] pt-4">
+        <img src="./assets/039d1.svg" alt="Information notice icon" class="w-4 h-4 shrink-0">
+        <span>Concept projects created for this sample portfolio. Not commissioned client work.</span>
+      </div>
+
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="border-t border-divider w-full bg-sandBg">
+      <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 py-16 sm:py-24 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+        
+        <!-- Studio Photograph Column -->
+        <div class="w-full lg:w-[464px] flex flex-col gap-3.5 shrink-0">
+          <div class="w-full h-[380px] sm:h-[500px] rounded-[16px] overflow-hidden shadow-sm">
+            <img src="./assets/e8eb2.png" alt="Alex Morgan sketching design concepts and brainstorming at work in the studio" class="w-full h-full object-cover">
+          </div>
+          <div class="flex items-center justify-between text-mutedText text-[11px]">
+            <span class="font-mono uppercase tracking-wide">SOMEWHERE BETWEEN A SKETCH &amp; AN IDEA.</span>
+            <span>Illustrative image</span>
+          </div>
+        </div>
+
+        <!-- About Content Column -->
+        <div class="flex-1 flex flex-col gap-7">
+          
+          <div class="flex flex-col gap-4">
+            <p class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">02 / A little about me</p>
+            <h2 class="text-[36px] sm:text-[44px] lg:text-[52px] font-medium tracking-tight text-darkSurface leading-[1.08]">
+              Less assumption.<br>
+              More understanding.
+            </h2>
+          </div>
+
+          <p class="text-[18px] sm:text-[20px] text-darkSurface font-normal leading-[1.6]">
+            I’m Alex, a curious HCI student learning to turn complicated problems into clear, useful experiences.
+          </p>
+
+          <p class="text-[15px] sm:text-[16px] text-mutedText font-normal leading-[1.7]">
+            I like the part where research challenges an idea, a messy sketch starts to make sense, and a prototype opens up a better conversation. My work connects a love of visual craft with a growing understanding of how people think and behave.
+          </p>
+
+          <p class="text-[15px] sm:text-[16px] text-mutedText font-normal leading-[1.7]">
+            Away from the screen: collecting independent magazines, taking long photo walks, and noticing the little things most people walk past.
+          </p>
+
+          <div class="h-px bg-divider w-full my-1"></div>
+
+          <div class="flex items-center gap-4 text-darkSurface">
+            <img src="./assets/a0bcf.svg" alt="Sparkles icon" class="w-6 h-6 shrink-0">
+            <span class="text-[16px] font-medium">Still learning. Always asking better questions.</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 pt-10 pb-20 sm:pb-24 flex flex-col gap-10">
+      
+      <!-- Section Heading -->
+      <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6">
+        <div class="flex flex-col gap-4">
+          <p class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">03 / My growing toolkit</p>
+          <h2 class="text-[36px] sm:text-[44px] lg:text-[52px] font-medium tracking-tight text-darkSurface leading-[1.08]">
+            Equal parts thinking &amp; making.
+          </h2>
+        </div>
+        <p class="text-[14px] text-mutedText max-w-[220px] leading-[1.6]">
+          Built through coursework, curiosity and a lot of iteration.
+        </p>
+      </div>
+
+      <!-- Skill Groups Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 w-full">
+        
+        <!-- Skill 1 -->
+        <div class="border-t border-divider pt-6 flex flex-col gap-4">
+          <img src="./assets/c2461.svg" alt="User research discussion messages icon" class="w-7 h-7">
+          <h3 class="text-[22px] sm:text-[24px] font-medium tracking-tight text-darkSurface">
+            Understand people
+          </h3>
+          <p class="text-[15px] sm:text-[16px] text-mutedText leading-[1.6]">
+            Listening first, finding patterns, and asking what the real problem is.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">User interviews</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Journey mapping</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Usability testing</span>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="border-t border-divider pt-6 flex flex-col gap-4">
+          <img src="./assets/d26be.svg" alt="Interface panels layout icon" class="w-7 h-7">
+          <h3 class="text-[22px] sm:text-[24px] font-medium tracking-tight text-darkSurface">
+            Shape experiences
+          </h3>
+          <p class="text-[15px] sm:text-[16px] text-mutedText leading-[1.6]">
+            Turning insights into thoughtful flows and interfaces that feel clear.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Figma</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Auto Layout</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Interactive prototypes</span>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="border-t border-divider pt-6 flex flex-col gap-4">
+          <img src="./assets/94bb1.svg" alt="Code XML brackets icon" class="w-7 h-7">
+          <h3 class="text-[22px] sm:text-[24px] font-medium tracking-tight text-darkSurface">
+            Bring ideas to life
+          </h3>
+          <p class="text-[15px] sm:text-[16px] text-mutedText leading-[1.6]">
+            Connecting visual craft with the fundamentals of building for the web.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">HTML &amp; CSS</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Responsive design</span>
+            <span class="border border-divider text-[12px] text-mutedText px-3 py-1.5 rounded-full">Accessibility</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROCESS SECTION (Dark Theme) -->
+    <section id="process" class="w-full bg-darkSurface text-sandBg py-16 sm:py-24">
+      <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col gap-14">
+        
+        <!-- Process Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+          <div class="flex flex-col gap-4">
+            <p class="font-mono text-[12px] tracking-[1px] uppercase text-[#bfc5b8] font-medium">04 / How I work</p>
+            <h2 class="text-[36px] sm:text-[44px] lg:text-[52px] font-medium tracking-tight text-sandBg leading-[1.08]">
+              A process, not a straight line.
+            </h2>
+          </div>
+          <div class="flex items-center gap-3 text-[#bfc5b8] text-[14px]">
+            <img src="./assets/257df.svg" alt="Iteration repeat arrows icon" class="w-6 h-6 shrink-0">
+            <div class="leading-[1.5]">
+              <p>Room to go back.</p>
+              <p>Room to get better.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Process Steps Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full">
+          
+          <!-- Step 01 -->
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-4 w-full">
+              <span class="font-mono text-[12px] text-[#bfc5b8]">01</span>
+              <div class="h-px bg-mutedText flex-1"></div>
+              <img src="./assets/a72dc.svg" alt="Next step arrow" class="w-4 h-4">
+            </div>
+            <h3 class="text-[26px] sm:text-[28px] font-medium tracking-tight text-sandBg">
+              Listen
+            </h3>
+            <p class="text-[15px] text-[#bfc5b8] leading-[1.7]">
+              Start with people. Observe, ask questions and understand the context before designing a solution.
+            </p>
+          </div>
+
+          <!-- Step 02 -->
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-4 w-full">
+              <span class="font-mono text-[12px] text-[#bfc5b8]">02</span>
+              <div class="h-px bg-mutedText flex-1"></div>
+              <img src="./assets/a72dc.svg" alt="Next step arrow" class="w-4 h-4">
+            </div>
+            <h3 class="text-[26px] sm:text-[28px] font-medium tracking-tight text-sandBg">
+              Make sense
+            </h3>
+            <p class="text-[15px] text-[#bfc5b8] leading-[1.7]">
+              Connect the dots. Turn research into clear needs, opportunities and a focused problem to solve.
+            </p>
+          </div>
+
+          <!-- Step 03 -->
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-4 w-full">
+              <span class="font-mono text-[12px] text-[#bfc5b8]">03</span>
+              <div class="h-px bg-mutedText flex-1"></div>
+              <img src="./assets/a72dc.svg" alt="Next step arrow" class="w-4 h-4">
+            </div>
+            <h3 class="text-[26px] sm:text-[28px] font-medium tracking-tight text-sandBg">
+              Make it real
+            </h3>
+            <p class="text-[15px] text-[#bfc5b8] leading-[1.7]">
+              Think on paper, then in prototypes. Explore alternatives and make the important interactions tangible.
+            </p>
+          </div>
+
+          <!-- Step 04 -->
+          <div class="flex flex-col gap-5">
+            <div class="flex items-center gap-4 w-full">
+              <span class="font-mono text-[12px] text-[#bfc5b8]">04</span>
+              <div class="h-px bg-mutedText flex-1"></div>
+              <img src="./assets/a72dc.svg" alt="Next step arrow" class="w-4 h-4">
+            </div>
+            <h3 class="text-[26px] sm:text-[28px] font-medium tracking-tight text-sandBg">
+              Learn &amp; refine
+            </h3>
+            <p class="text-[15px] text-[#bfc5b8] leading-[1.7]">
+              Put ideas in front of people. Listen to what works, question what doesn’t, and make it better.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 py-16 sm:py-24 flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
+      
+      <!-- Left Column -->
+      <div class="w-full lg:w-[400px] flex flex-col gap-5 shrink-0">
+        <div class="flex flex-col gap-4">
+          <p class="font-mono text-[12px] tracking-[1px] uppercase text-mutedText font-medium">05 / Learning in public</p>
+          <h2 class="text-[36px] sm:text-[44px] lg:text-[52px] font-medium tracking-tight text-darkSurface leading-[1.08]">
+            A foundation<br>in curiosity.
+          </h2>
+        </div>
+        <p class="text-[14px] text-mutedText leading-[1.65]">
+          Illustrative education and coursework for this student portfolio concept.
+        </p>
+      </div>
+
+      <!-- Right Column: Timeline / List -->
+      <div class="flex-1 flex flex-col gap-7 w-full">
+        
+        <div class="h-px bg-divider w-full"></div>
+
+        <!-- Entry 1 -->
+        <div class="flex items-start gap-5 w-full">
+          <img src="./assets/dbe13.svg" alt="Graduation cap education degree icon" class="w-[26px] h-[26px] mt-1 shrink-0">
+          <div class="flex-1 flex flex-col gap-2">
+            <h3 class="text-[20px] sm:text-[22px] font-medium text-darkSurface tracking-tight">
+              BSc · Human–Computer Interaction
+            </h3>
+            <p class="text-[15px] text-mutedText">
+              Example University · Illustrative student profile
+            </p>
+            <p class="text-[14px] text-mutedText leading-[1.6]">
+              Interaction design, research methods, cognition and web fundamentals.
+            </p>
+          </div>
+          <span class="font-mono text-[11px] text-mutedText whitespace-nowrap">2024–2027</span>
+        </div>
+
+        <div class="h-px bg-divider w-full"></div>
+
+        <!-- Entry 2 -->
+        <div class="flex items-start gap-5 w-full">
+          <img src="./assets/2af1d.svg" alt="Interactive cursor pointer lab icon" class="w-[26px] h-[26px] mt-1 shrink-0">
+          <div class="flex-1 flex flex-col gap-2">
+            <h3 class="text-[20px] sm:text-[22px] font-medium text-darkSurface tracking-tight">
+              HCI Lab 07 · Portfolio design
+            </h3>
+            <p class="text-[14px] text-mutedText leading-[1.65]">
+              Exploring hierarchy, accessible interfaces and reusable Auto Layout systems for a responsive portfolio.
+            </p>
+          </div>
+          <span class="font-mono text-[11px] text-brand font-medium whitespace-nowrap">CURRENT LAB</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT SECTION (Vibrant Blue) -->
+    <section id="contact" class="w-full bg-brand text-white py-16 sm:py-24">
+      <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col lg:flex-row items-start gap-12 lg:gap-24">
+        
+        <!-- Left Column: Intro & Direct Email -->
+        <div class="flex-1 flex flex-col gap-7">
+          
+          <p class="font-mono text-[12px] tracking-[1px] uppercase text-white/90 font-medium">06 / Say hello</p>
+          
+          <h2 class="text-[44px] sm:text-[56px] lg:text-[72px] font-medium tracking-tight leading-[1.02]">
+            Good things<br>
+            start with a<br>
+            conversation.
+          </h2>
+
+          <p class="text-[17px] sm:text-[18px] text-white/90 leading-[1.65] max-w-[480px]">
+            An interesting idea, a thoughtful question, or just a hello — I’d love to hear it.
+          </p>
+
+          <a href="mailto:alex.morgan@example.com" class="inline-flex items-center gap-3 text-[18px] font-medium underline underline-offset-4 hover:text-white/80 focus:outline-none focus:ring-2 focus:ring-white rounded py-1 transition-colors group">
+            <span>alex.morgan@example.com</span>
+            <img src="./assets/b3ff4.svg" alt="Arrow pointing to email" class="w-5 h-5 brightness-0 invert group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+          </a>
+
+          <div class="flex items-center gap-2 pt-2">
+            <img src="./assets/efb6f.svg" alt="Active status dot" class="w-2 h-2">
+            <span class="font-mono text-[11px] text-white/90 uppercase tracking-wide">Open to learning &amp; collaboration</span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Contact Form with Semantic inputs and explicit labels -->
+        <form class="w-full lg:w-[600px] flex flex-col gap-6" onsubmit="event.preventDefault(); alert('Thank you for reaching out! This is an illustrative demo form.');">
+          
+          <!-- Identity Fields -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+            
+            <div class="flex flex-col gap-2">
+              <label for="contact-name" class="text-[14px] font-medium text-white">Your name *</label>
+              <input 
+                id="contact-name" 
+                name="name" 
+                type="text" 
+                required 
+                placeholder="What should I call you?" 
+                class="h-[56px] px-4 bg-appWhite text-darkSurface placeholder-mutedText rounded-[8px] focus:outline-none focus:ring-2 focus:ring-black transition-all"
+              >
+            </div>
+
+            <div class="flex flex-col gap-2">
+              <label for="contact-email" class="text-[14px] font-medium text-white">Email address *</label>
+              <input 
+                id="contact-email" 
+                name="email" 
+                type="email" 
+                required 
+                placeholder="you@example.com" 
+                class="h-[56px] px-4 bg-appWhite text-darkSurface placeholder-mutedText rounded-[8px] focus:outline-none focus:ring-2 focus:ring-black transition-all"
+              >
+            </div>
+
+          </div>
+
+          <!-- Message Field -->
+          <div class="flex flex-col gap-2">
+            <label for="contact-message" class="text-[14px] font-medium text-white">What’s on your mind? *</label>
+            <textarea 
+              id="contact-message" 
+              name="message" 
+              rows="4" 
+              required 
+              placeholder="Tell me a little about your idea…" 
+              class="p-4 bg-appWhite text-darkSurface placeholder-mutedText rounded-[8px] focus:outline-none focus:ring-2 focus:ring-black transition-all resize-none"
+            ></textarea>
+          </div>
+
+          <!-- Privacy agreement with input and label -->
+          <div class="flex items-start gap-3">
+            <input 
+              id="contact-privacy" 
+              name="privacy" 
+              type="checkbox" 
+              required 
+              class="mt-1 w-4 h-4 rounded border-white accent-black cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
+            >
+            <label for="contact-privacy" class="text-[13px] text-white/90 leading-[1.5] cursor-pointer">
+              I agree to share my details so Alex can reply to this message.
+            </label>
+          </div>
+
+          <!-- Submission Row -->
+          <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pt-2">
+            <button 
+              type="submit" 
+              class="h-[56px] px-6 bg-sandBg text-darkSurface font-semibold text-[16px] rounded-[8px] flex items-center justify-center gap-6 hover:bg-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-brand transition-all shadow-sm active:scale-[0.98]"
+            >
+              <span>Send message</span>
+              <img src="./assets/b91a3.svg" alt="Send message arrow" class="w-5 h-5">
+            </button>
+            <span class="text-[12px] text-white/80">* Required fields</span>
+          </div>
+
+          <p class="text-[12px] text-white/80 leading-[1.5]">
+            Demo form for the HCI Lab 07 design. No messages are sent.
+          </p>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="w-full bg-sandBg border-t border-divider py-12 sm:py-16">
+    <div class="w-full max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col gap-10">
+      
+      <!-- Top navigation / identity row -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+        
+        <div class="flex flex-col gap-3">
+          <p class="text-[42px] sm:text-[54px] lg:text-[62px] font-medium text-darkSurface tracking-[-2.5px] sm:tracking-[-3.5px] leading-tight">
+            alex morgan.
+          </p>
+          <p class="font-mono text-[11px] text-mutedText tracking-wide uppercase">
+            Curious by nature. Thoughtful by design.
+          </p>
+        </div>
+
+        <!-- Social and back to top links -->
+        <div class="flex flex-wrap items-center gap-6 sm:gap-8">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[14px] text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-1 transition-colors group">
+            <span>LinkedIn</span>
+            <img src="./assets/6cd6d.svg" alt="LinkedIn external link icon" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+          </a>
+          <a href="https://behance.net" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-[14px] text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-1 transition-colors group">
+            <span>Behance</span>
+            <img src="./assets/6cd6d.svg" alt="Behance external link icon" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+          </a>
+          <a href="#top" class="flex items-center gap-2 text-[14px] text-darkSurface hover:text-brand focus:outline-none focus:ring-2 focus:ring-brand rounded py-1 px-1 transition-colors group">
+            <span>Back to top</span>
+            <img src="./assets/5f6ef.svg" alt="Arrow pointing to top of page" class="w-4 h-4 group-hover:-translate-y-0.5 transition-transform">
+          </a>
+        </div>
+
+      </div>
+
+      <div class="h-px bg-divider w-full"></div>
+
+      <!-- Credits and copyright row -->
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-mutedText text-[12px]">
+        <p>© 2026 Alex Morgan · Illustrative student portfolio</p>
+        <p>Sample identity &amp; projects, not the student’s personal details.</p>
+        <p class="font-mono text-[11px]">HCI / LAB 07</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Interactive Toggle (Zero absolute positioning) -->
+  <script>
+    const menuBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+        menuBtn.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      });
+
+      // Close menu when clicking a link
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          menuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('flex');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
